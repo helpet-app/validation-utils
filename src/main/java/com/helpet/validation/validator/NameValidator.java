@@ -11,12 +11,12 @@ import java.util.regex.Pattern;
 public class NameValidator implements ConstraintValidator<Name, String> {
     @Override
     public boolean isValid(String s, ConstraintValidatorContext constraintValidatorContext) {
-        if (Objects.isNull(s)) {
+        if (Objects.isNull(s) || s.length() > 64) {
             return false;
         }
 
-        Pattern namePattern = Pattern.compile("[A-Za-zА-Яа-яЁё](\\s[A-Za-zА-Яа-яЁё])*");
-        Matcher nameMatcher = namePattern.matcher(s.toLowerCase());
+        Pattern namePattern = Pattern.compile("[A-Za-zА-Яа-яЁё]+(\\s[A-Za-zА-Яа-яЁё]+)*");
+        Matcher nameMatcher = namePattern.matcher(s);
         return nameMatcher.matches();
     }
 }
