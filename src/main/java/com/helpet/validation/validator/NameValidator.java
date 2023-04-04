@@ -9,9 +9,17 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class NameValidator implements ConstraintValidator<Name, String> {
+    private int maxLength;
+
+    @Override
+    public void initialize(Name constraintAnnotation) {
+        ConstraintValidator.super.initialize(constraintAnnotation);
+        this.maxLength = constraintAnnotation.maxLength();
+    }
+
     @Override
     public boolean isValid(String s, ConstraintValidatorContext constraintValidatorContext) {
-        if (Objects.isNull(s) || s.length() > 64) {
+        if (Objects.isNull(s) || s.length() > maxLength) {
             return false;
         }
 

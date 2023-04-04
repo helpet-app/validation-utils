@@ -18,6 +18,8 @@ public @interface Name {
 
     Class<? extends Payload>[] payload() default {};
 
+    int maxLength() default 64;
+
     @Documented
     @Target({ ElementType.METHOD, ElementType.FIELD, ElementType.ANNOTATION_TYPE, ElementType.CONSTRUCTOR, ElementType.PARAMETER, ElementType.TYPE_USE })
     @Retention(RetentionPolicy.RUNTIME)
