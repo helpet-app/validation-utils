@@ -1,6 +1,6 @@
 package com.helpet.validation.validator;
 
-import com.helpet.validation.annotation.Word;
+import com.helpet.validation.annotation.Username;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 
@@ -8,7 +8,7 @@ import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class UsernameValidator implements ConstraintValidator<Word, String> {
+public class UsernameValidator implements ConstraintValidator<Username, String> {
     @Override
     public boolean isValid(String s, ConstraintValidatorContext constraintValidatorContext) {
         if (Objects.isNull(s)) {
