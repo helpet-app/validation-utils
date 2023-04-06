@@ -18,6 +18,10 @@ public @interface Word {
 
     Class<? extends Payload>[] payload() default {};
 
+    int minLength() default 1;
+
+    int maxLength() default 30;
+
     @Documented
     @Target({ ElementType.METHOD, ElementType.FIELD, ElementType.ANNOTATION_TYPE, ElementType.CONSTRUCTOR, ElementType.PARAMETER, ElementType.TYPE_USE })
     @Retention(RetentionPolicy.RUNTIME)
