@@ -36,7 +36,7 @@ public class UsernameValidator implements ConstraintValidator<Username, String> 
          * (?!^_+$) - username is not a sequence of underscores
          * (?!^\d+$) - username is not a sequence of numbers
          */
-        String regex = String.format("^(?!^\\..*)(?!.*\\.\\.)(?!.*\\.$)(?!^_+$)(?!^\\d+$)[\\w.]{%d,%d}$", minLength, maxLength);
+        String regex = String.format("^(?!^\\..*)(?!.*\\.$)(?!.*\\.\\.)(?!^_+$)(?!^\\d+$)[\\w.]{%d,%d}$", minLength, maxLength);
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(s.toLowerCase());
         return matcher.matches();
