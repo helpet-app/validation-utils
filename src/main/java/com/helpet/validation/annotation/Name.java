@@ -18,6 +18,8 @@ public @interface Name {
 
     Class<? extends Payload>[] payload() default {};
 
+    int minLength() default 1;
+
     int maxLength() default 64;
 
     @Documented
