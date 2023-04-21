@@ -12,7 +12,6 @@ public class PasswordValidator implements ConstraintValidator<Password, String> 
 
     @Override
     public void initialize(Password constraintAnnotation) {
-        ConstraintValidator.super.initialize(constraintAnnotation);
         this.minLength = constraintAnnotation.minLength();
         this.validateParameters();
     }

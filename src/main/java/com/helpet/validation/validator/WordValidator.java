@@ -17,7 +17,6 @@ public class WordValidator implements ConstraintValidator<Word, String> {
 
     @Override
     public void initialize(Word constraintAnnotation) {
-        ConstraintValidator.super.initialize(constraintAnnotation);
         this.minLength = constraintAnnotation.minLength();
         this.maxLength = constraintAnnotation.maxLength();
         this.validateParameters();

@@ -17,7 +17,6 @@ public class NameValidator implements ConstraintValidator<Name, String> {
 
     @Override
     public void initialize(Name constraintAnnotation) {
-        ConstraintValidator.super.initialize(constraintAnnotation);
         this.minLength = constraintAnnotation.minLength();
         this.maxLength = constraintAnnotation.maxLength();
         this.validateParameters();
